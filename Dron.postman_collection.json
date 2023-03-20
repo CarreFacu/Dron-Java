@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "3b6f0896-4c20-4946-bbb3-7e9b67a5302d",
+		"name": "Dron",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12826986"
+	},
+	"item": [
+		{
+			"name": "Dron Requests",
+			"item": [
+				{
+					"name": "get Drons",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"Middleweight\",\r\n    \"serialNumber\": 11111,\r\n    \"weightLimit\": 400,\r\n    \"bateryCapacity\":40,\r\n    \"state\":\"IDLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Dron",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"Middleweight\",\r\n    \"serialNumber\": 11,\r\n    \"weightLimit\": 400,\r\n    \"bateryCapacity\":40,\r\n    \"state\":\"IDLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Dron by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/dron/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "641077a65fbcd2f10e294a7b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Medication to Dron",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newMedications\":[\"6416391cada890471a236f2a\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dron/:idDron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron",
+								":idDron"
+							],
+							"variable": [
+								{
+									"key": "idDron",
+									"value": "64163bf98875a926c90339d2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dron by State",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\": \"IDLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dron/state",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron",
+								"state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update state Dron",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"state\": \"LOADING\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/dron/updateState/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"dron",
+								"updateState",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64163bf98875a926c90339d2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medication Request",
+			"item": [
+				{
+					"name": "get Medication",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/medication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Medication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Medication01\",\r\n    \"weight\": 90,\r\n    \"code\":\"CODE01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/medication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"medication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
