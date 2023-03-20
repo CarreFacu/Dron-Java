@@ -21,16 +21,15 @@ import java.util.Optional;
 @Service
 public class DronService {
 
-    @Autowired
+
     private final DronRepository dronRepository;
     private final MedicationRepository medicationRepository;
-
+    private static final Logger logger = LoggerFactory.getLogger(DronService.class);
+    @Autowired
     public DronService(DronRepository dronRepository, MedicationRepository medicationRepository) {
         this.dronRepository = dronRepository;
         this.medicationRepository = medicationRepository;
     }
-
-    private static final Logger logger = LoggerFactory.getLogger(DronService.class);
     public Dron newDron(Dron dron){
         return dronRepository.save(dron);
     }
@@ -127,7 +126,7 @@ public class DronService {
         return  update;
     }
 
-        @Scheduled(cron = "0 0 * * *")
+        @Scheduled(cron = "0 0 0 * * *")
         public void executeTask() {
             logger.info(dronRepository.findAll().toString());
         }

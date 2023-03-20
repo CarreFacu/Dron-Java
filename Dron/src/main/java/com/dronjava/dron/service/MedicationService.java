@@ -21,9 +21,9 @@ import java.util.List;
 @Service
 public class MedicationService {
 
-    @Autowired
-    private final MedicationRepository medicationRepository;
 
+    private final MedicationRepository medicationRepository;
+    @Autowired
     public MedicationService(MedicationRepository medicationRepository) {
         this.medicationRepository = medicationRepository;
     }
